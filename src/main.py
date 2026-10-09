@@ -2,14 +2,16 @@ import os
 import shlex
 import sys
 
-VFS_name = "my_vfs"
+VFS_NAME = "my_vfs"
 
 def expand_env_variables(text):
     return os.path.expandvars(text)
 
 def parse_input(raw_input):
     expanded = expand_env_variables(raw_input)
-    return shlex.split(expanded)
+    expanded = expanded.replace('\\', '/')
+    tokens = shlex.split(expanded)
+    return [token.replace('/', '\\') for token in tokens]
 
 def execute_command(tokens):
     if not tokens:
@@ -31,7 +33,7 @@ def execute_command(tokens):
 def repl_loop():
     while True:
         try:
-            raw_cmd = input(f"[{VFS_name}]$ ")
+            raw_cmd = input(f"[{VFS_NAME}]$ ")
             if not raw_cmd.strip():
                 continue
             tokens = parse_input(raw_cmd)
