@@ -88,11 +88,11 @@ def main():
     print("[DEBUG] Initialized shell configurayion:")
     print(f"  vfs_path: {args.vfs}")
     print(f"  startup_script: {args.script}")
-    VFS_NAME = os.path.basename(args.vfs) if args.vfs else DEFAULT_VFS_NAME
+    vfs_name = os.path.basename(args.vfs) if args.vfs else DEFAULT_VFS_NAME
     if args.script:
-        run_startup_script(args.script, VFS_NAME)
+        run_startup_script(args.script, vfs_name)
     else:
-        repl_loop(VFS_NAME)
+        repl_loop(vfs_name)
 
 if __name__ == "__main__":
     main()
