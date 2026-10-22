@@ -1,4 +1,14 @@
+ls
 ls -l
-cd test_folder
-cd invalid path with too many arguments
+ls arg1 arg2
+
+cd
+cd folder
+cd too many arguments
+
+$PATH
+echo $OS
+
+unknown_command --test
+
 exit
