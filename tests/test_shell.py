@@ -45,5 +45,5 @@ class TestStage3VFS(unittest.TestCase):
         self.assertEqual(vfs.root_name, "vfs_minimal")
         self.assertTrue(vfs.node_exists(["empty.txt"]))
 
-if __name__ == "main":
+if __name__ == "__main__":
     unittest.main()
