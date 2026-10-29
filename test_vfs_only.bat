@@ -1,3 +1,3 @@
 @echo off
-python -m src.main --vfs "C:\virtual_disk"
+python src/main.py --vfs "C:\virtual_disk"
 pause
